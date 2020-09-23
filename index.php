@@ -1,19 +1,12 @@
 <?php
 
-
-
-
 /* definire classe Square e classe Cube ;
-definire, oltre a variabili d'istanza, costruttore, e toString, i metodi per il calcolo dell'area/volume e del perimetro/superficie cercando di sfruttare al meglio ereditarieta' e polimorfismo; testare le classi definite con alcune istanze per verificare che sia tutto corretto
-NOTE:
-area quadrato: side * side
-perimetro quadrato: 4 * side
-volume cubo: side * side * side
-superficie cubo: 6 * side * side
-N.B.: definire ogni variabile e metodo pubblico */
+definire, oltre a variabili d'istanza, costruttore, e toString, i metodi per il calcolo dell'area/volume e del perimetro/superficie cercando di sfruttare al meglio ereditarieta' e polimorfismo; testare le classi definite con alcune istanze per verificare che sia tutto corretto */
+
+
 
 class Square {
-  protected $side;
+  public $side;
 
   public function __construct($side){
     // controllo s
@@ -25,7 +18,7 @@ class Square {
     if (is_int($side) == true ){
       return $this -> side = $side;
     } else{
-      return $this -> side =  "ERROR";
+      return $this -> side =  "<span style='color:red;'> ERROR </span>";
     }
   }
 
@@ -39,10 +32,10 @@ class Square {
 
     public function __toString(){
       return
-            "<strong> ---- SQUARE ------- </strong> "."<br>"
-            . "<strong> Square side </strong> :" . $this -> side  ."<br>"
-            . "<strong> Square Perimeter </strong>" . $this -> getPer() . "<br>"
-            . "<strong> Square Area </strong> :" . $this -> getArea() . "<br>";
+            "<h4 style='color:orange;'> ---- SQUARE ------- </h4> "
+            . "<strong> Square side </strong> : " . $this -> side  ."<br>"
+            . "<strong> Square Perimeter </strong>: " . $this -> getPer() . "<br>"
+            . "<strong> Square Area </strong> : " . $this -> getArea() . "<br>";
     }
 
 }
@@ -64,10 +57,10 @@ class Cube extends Square {
 
   public function __toString(){
     return
-    "<strong>-------- CUBE ------ </strong>"."<br>"
-    . "<strong> Cube side </strong> :" . $this -> side  ."<br>"
-    . "<strong> Cube Surface </strong>" . $this -> getSurf() . "<br>"
-    . "<strong> Cube Volume </strong> :" . $this -> getVol() . "<br>";
+    "<h4 style='color:lightblue;'> ---- CUBE ------- </h4>"
+    . "<strong> Cube side </strong> : " . $this -> side  ."<br>"
+    . "<strong> Cube Surface </strong> : " . $this -> getSurf() . "<br>"
+    . "<strong> Cube Volume </strong> : " . $this -> getVol() . "<br>";
   }
 }
 
@@ -90,14 +83,24 @@ $cub2 = new Cube(9);
 
 $cub3 = new Cube("a");
 
+?>
+
+<div class="container" style="width:100%;">
+
+  <div class="result" style="width:200px; margin-left:auto ; margin-right:auto ;">
 
 
+ <?php
 
+echo $sq1 . "<br>"
+   . $sq2 . "<br>"
+   . $sq3 . "<br>"
+   . $sq4 . "<br>". "<br>"
+   . $cub1 . "<br>"
+   . $cub2 . "<br>"
+   . $cub3 . "<br>";
 
+   ?>
+   </div>
 
-
-echo $sq1 . "<br>" . $sq2 . "<br>" . $sq3 . "<br>". $sq4 . "<br>". "<br>". $cub1 . "<br>". $cub2 . "<br>". $cub3 . "<br>";
-
-
-
- ?>
+</div>
