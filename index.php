@@ -43,10 +43,6 @@ class Square {
 
 class Cube extends Square {
 
-  public function __construct($side){
-    parent:: __construct($side);
-  }
-
   public function getSurf(){
     return ($this-> side)*6;
   }
