@@ -48,8 +48,13 @@ class Cube extends Square {
   }
 
   public function getVol(){
-    return parent::getArea() * ($this-> side);
+    return $this -> getArea() * ($this-> side);
   }
+
+  // Versione Polimorfica
+  // public function getArea(){
+  //   return parent::getArea() * ($this-> side);
+  // }
 
   public function __toString(){
     return
