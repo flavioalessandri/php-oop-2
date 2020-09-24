@@ -44,7 +44,7 @@ class Square {
 class Cube extends Square {
 
   public function getSurf(){
-    return ($this-> side)*6;
+    return $this -> getArea() *6;
   }
 
   public function getVol(){
